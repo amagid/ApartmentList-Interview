@@ -1,3 +1,5 @@
+const handlers = require('./handlers');
+
 module.exports = function mountAPI(router) {
-    router.get('/', (req, res) => res.promise('Up and Running!'));
+    router.get('/get-groupings', (req, res) => res.promise(handlers.getGroupings(req.query.names, req.query.groupSize)));
 };
