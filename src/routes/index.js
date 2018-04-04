@@ -12,4 +12,5 @@ function addRoutes(router) {
     
     router.use('/api', api);
     router.use('/auth', auth);
+    router.get('/', (req, res) => { res.sendFile(__dirname + '/interface.html'); });
 };
